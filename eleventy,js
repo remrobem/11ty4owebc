@@ -1,0 +1,21 @@
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('css');
+
+  // Create collections for events and news
+  eleventyConfig.addCollection('events', function (collectionApi) {
+    return collectionApi.getFilteredByGlob('events/*.md');
+  });
+
+  eleventyConfig.addCollection('news', function (collectionApi) {
+    return collectionApi.getFilteredByGlob('news/*.md');
+  });
+
+  return {
+    dir: {
+      input: '.',
+      includes: '_includes',
+      data: '_data',
+      output: '_site',
+    },
+  };
+};

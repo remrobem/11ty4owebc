@@ -1,0 +1,17 @@
+---
+layout: "base.njk"
+title: "Home"
+---
+<h2>Events</h2>
+<ul>
+    {% for event in collections.events %}
+    <li><a href="{{ event.url }}">{{ event.data.title }}</a> - {{ event.data.date }}</li>
+    {% endfor %}
+</ul>
+
+<h2>News</h2>
+<ul>
+    {% for newsItem in collections.news %}
+    <li><a href="{{ newsItem.url }}">{{ newsItem.data.title }}</a> - {{ newsItem.data.date }}</li>
+    {% endfor %}
+</ul>
